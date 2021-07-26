@@ -6,6 +6,7 @@ export default class Form extends React.Component {
 		this.state={
 			name: '',
 			email: '',
+			cpf:'',
 		}
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -18,7 +19,7 @@ export default class Form extends React.Component {
 	}
 
 	render() {
-		const { name, email } = this.state;
+		const { name, email, cpf } = this.state;
 		return (
 			<fieldset>
 				<label htmlFor="input-name">
@@ -45,6 +46,19 @@ export default class Form extends React.Component {
 					onChange={ this.handleChange }
 					/>
 				</label>
+				<label htmlFor="input-cpf">
+					CPF:
+					<input
+					type="text"
+					name="cpf"
+					id="input-cpf"
+					maxLength="11"
+					required="true"
+					value={ cpf }
+					onChange={ this.handleChange }
+					/>
+				</label>
+
 			</fieldset>
 		);
 	}
