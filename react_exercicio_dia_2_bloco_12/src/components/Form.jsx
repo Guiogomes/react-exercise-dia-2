@@ -7,6 +7,7 @@ export default class Form extends React.Component {
 			name: '',
 			email: '',
 			cpf:'',
+			endereco: '',
 		}
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -19,7 +20,7 @@ export default class Form extends React.Component {
 	}
 
 	render() {
-		const { name, email, cpf } = this.state;
+		const { name, email, cpf, endereco } = this.state;
 		return (
 			<fieldset>
 				<label htmlFor="input-name">
@@ -29,7 +30,7 @@ export default class Form extends React.Component {
 					name="name"
 					id="input-name"
 					maxLength="40"
-					required="true"
+					required={ true }
 					value={ name.toUpperCase() }
 					onChange={ this.handleChange }
 					/>
@@ -41,7 +42,7 @@ export default class Form extends React.Component {
 					name="email"
 					id="input-email"
 					maxLength="50"
-					required="true"
+					required={ true }
 					value={ email }
 					onChange={ this.handleChange }
 					/>
@@ -53,8 +54,20 @@ export default class Form extends React.Component {
 					name="cpf"
 					id="input-cpf"
 					maxLength="11"
-					required="true"
+					required={ true }
 					value={ cpf }
+					onChange={ this.handleChange }
+					/>
+				</label>
+				<label htmlFor="input-endereco">
+					Endereço:
+					<input
+					type="text"
+					name="endereco"
+					id="input-endereco"
+					maxLength="200"
+					required={ true }
+					value={ endereco.replace(/\W/g, '') }
 					onChange={ this.handleChange }
 					/>
 				</label>
