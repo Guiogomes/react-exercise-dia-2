@@ -1,5 +1,6 @@
 import React from 'react';
-
+// exercício realizado no modelo Dojo por Fabio Juvenal, Rodrigo Augusto e
+// Guilherme Gomes
 export default class Form extends React.Component {
 	constructor(){
 		super();
@@ -8,6 +9,7 @@ export default class Form extends React.Component {
 			email: '',
 			cpf:'',
 			endereco: '',
+			cidade: '',
 		}
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -20,7 +22,7 @@ export default class Form extends React.Component {
 	}
 
 	render() {
-		const { name, email, cpf, endereco } = this.state;
+		const { name, email, cpf, endereco, cidade } = this.state;
 		return (
 			<fieldset>
 				<label htmlFor="input-name">
@@ -71,7 +73,23 @@ export default class Form extends React.Component {
 					onChange={ this.handleChange }
 					/>
 				</label>
-
+				<label htmlFor="input-endereco">
+					Cidade:
+					<input
+					type="text"
+					name="cidade"
+					id="input-cidade"
+					maxLength="28"
+					required={ true }
+					value={ cidade }
+					onChange={ this.handleChange }
+					onBlur={(event) => 
+						(Number.isInteger(parseInt(event.target.value[0]))) ? 
+							event.target.value = '' : 
+							event.target.value = cidade
+					}
+					/>
+				</label>
 			</fieldset>
 		);
 	}
