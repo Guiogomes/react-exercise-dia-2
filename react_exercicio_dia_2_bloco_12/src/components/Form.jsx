@@ -1,4 +1,6 @@
 import React from 'react';
+import StatesResult from '../States';
+console.log(StatesResult());
 // exercício realizado no modelo Dojo por Fabio Juvenal, Rodrigo Augusto e
 // Guilherme Gomes
 export default class Form extends React.Component {
