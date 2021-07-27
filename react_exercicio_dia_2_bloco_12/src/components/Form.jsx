@@ -1,6 +1,6 @@
 import React from 'react';
-import StatesResult from '../States';
-console.log(StatesResult());
+// import getStatesInfo from '../States';
+import states from '../arrayStates';
 // exercício realizado no modelo Dojo por Fabio Juvenal, Rodrigo Augusto e
 // Guilherme Gomes
 export default class Form extends React.Component {
@@ -91,6 +91,11 @@ export default class Form extends React.Component {
 							event.target.value = cidade
 					}
 					/>
+				</label>
+				<label>
+					<select>
+						{states.sort().map((state, index) => <option key={index}>{state}</option>)}
+					</select>
 				</label>
 			</fieldset>
 		);
